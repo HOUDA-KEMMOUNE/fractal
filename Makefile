@@ -12,7 +12,7 @@
 
 NAME = fractol
 CC = cc 
-FLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext 
+FLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 SRC = main.c fractol.c utils.c render.c math_utils.c events.c errors.c
 OBJ = $(SRC:.c=.o)
 
@@ -22,9 +22,12 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $@
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
+	@echo "The object files was cleaned succesfully !"
 
 fclean: clean
-	rm -rf $(NAME)
-
+	@rm -rf $(NAME)
+	@echo "The executable was cleaned succesfully !"
 re: fclean all
+
+.SECONDARY: $(OBJ)
