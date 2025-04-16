@@ -18,9 +18,9 @@ int	mouse_handler(int button, int x, int y, void *param)
 
 	fractol = (t_mlx *)param;
 	if (button == 4)
-		fractol->zoom *= 0.78;
+		fractol->zoom *= 0.63;
 	else if (button == 5)
-		fractol->zoom *= 1.0;
+		fractol->zoom *= 1.2;
 	fractal_render(fractol);
 	return (0);
 }
